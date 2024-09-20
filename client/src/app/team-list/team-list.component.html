@@ -1,0 +1,10 @@
+<div *ngIf="teams.length > 0">
+    <h3>Teams in {{ leagueCode }}</h3>
+    <input type="text" [(ngModel)]="filter" placeholder="Filter by team name" />
+    <ul>
+      <li *ngFor="let team of teams | filter:filter" (click)="viewTeam(team.id)">
+        {{ team.name }}
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,10 @@
+<div *ngIf="team">
+    <h2>{{ team.name }}</h2>
+    <img [src]="team.crest" alt="{{ team.name }} logo" />
+    <p>{{ team.shortName }} ({{ team.tla }})</p>
+    <h3>Players</h3>
+    <ul>
+      <li *ngFor="let player of players">{{ player.name }} - {{ player.position }}</li>
+    </ul>
+</div>
+  
