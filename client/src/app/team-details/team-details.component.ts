@@ -20,14 +20,15 @@ export class TeamDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.teamId = params['id'];
+      this.leagueCode = params['leagueCode'];
     });
     this.route.queryParams.subscribe(params => {
-      this.leagueCode = params['leagueCode'];
+      this.teamId = params['id'];
     });
 
     this.apiService.getPlayers(this.leagueCode, this.teamId).subscribe(data => {
       this.players = data;
+      console.log("Players data: ", this.players);
     });
   }
 }

@@ -21,16 +21,20 @@ export class TeamListComponent implements OnInit {
 
   constructor(private apiService: FootballApiService, private route: ActivatedRoute, private router: Router) {}
 
-  viewTeam(teamId: number) {
-    this.router.navigate(['/teams', teamId]);
+  viewTeam(teamId: number, teamName: string) {
+    if (this.leagueCode && teamId) {
+      this.router.navigate(['/teams', this.leagueCode, teamId], { queryParams: { teamName } });
+    } else {
+      console.error("League Code or Team Id is undefined: ", { leagueCode: this.leagueCode, teamId })
+    }
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      // this.leagueCode = params['leagueCode'];
       this.leagueCode = params.get('leagueCode') || '';
       if (this.leagueCode) {
         this.apiService.getTeams(this.leagueCode).subscribe(data => {
+          console.log('Teams Data:', data);
           this.teams = data;
         });
       }
