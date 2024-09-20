@@ -14,7 +14,7 @@ To test the routes, I always use Postman. Postman allows me to test routes witho
 
 Once I’m sure that the entire backend works perfectly, I move on to the frontend. In this case, Angular is a framework I had never worked with before, although I am more specialized in React. So my strategy has been to try to understand how to write the logic that I already know from React, in Angular. That is, how to create components, set up routing, apply JavaScript functions in the code, among other things. It’s worth mentioning that within the timeframe given for this project, it’s naturally very difficult to learn Angular from scratch. So instead of trying to learn all of Angular, I focused on learning the specific parts of Angular that this project required due to time constraints.
 
-I hope this project demonstrates what I consider to be one of my strongest points: my adaptability and my ability to learn. Thank you very much.
+I hope this project demonstrates what I consider to be one of my strongest points: my adaptability and my ability to learn quickly.
 
 ## Features 💡
 

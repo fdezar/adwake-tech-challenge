@@ -26,8 +26,9 @@ export class TeamListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.leagueCode = params['leagueCode'];
+    this.route.paramMap.subscribe(params => {
+      // this.leagueCode = params['leagueCode'];
+      this.leagueCode = params.get('leagueCode') || '';
       if (this.leagueCode) {
         this.apiService.getTeams(this.leagueCode).subscribe(data => {
           this.teams = data;

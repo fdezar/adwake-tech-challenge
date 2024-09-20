@@ -5,6 +5,6 @@ import { LeagueSelectorComponent } from './league-selector/league-selector.compo
 
 export const routes: Routes = [
   { path: '', component: LeagueSelectorComponent },
-  { path: 'teams', component: TeamListComponent },
-  { path: 'teams/:id', component: TeamDetailsComponent },
+  { path: 'teams/:leagueCode', component: TeamListComponent },
+  { path: 'teams/:leagueCode/:id', component: TeamDetailsComponent },
 ];

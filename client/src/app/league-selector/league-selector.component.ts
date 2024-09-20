@@ -16,7 +16,8 @@ export class LeagueSelectorComponent {
 
   fetchTeams() {
     if (this.leagueCode) {
-      this.router.navigate(['teams'], { queryParams: { leagueCode: this.leagueCode } });
+      // this.router.navigate(['teams'], { queryParams: { leagueCode: this.leagueCode } });
+      this.router.navigate(['teams', this.leagueCode]);
     }
   }
 }
