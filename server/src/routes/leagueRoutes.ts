@@ -82,16 +82,24 @@ router.post('/import', async (req: Request, res: Response) => {
   }
 });
 
-// Fetch teams by league code
 router.get('/teams/:leagueCode', async (req: Request, res: Response) => {
   const { leagueCode } = req.params;
+  const { teamName } = req.query;
+
   try {
     const competition = await Competition.findOne({ code: leagueCode });
     if (!competition) {
       return res.status(404).json({ error: 'League not found' });
     }
 
-    const teams = await Team.find({ competition: competition._id });
+    const teamsQuery: any = { competition: competition._id };
+
+    // If there is teamName, filter by one. If not, don't filter, return all teams from the specific league
+    if (teamName) {
+      teamsQuery.name = new RegExp(teamName as string, 'i');
+    }
+
+    const teams = await Team.find(teamsQuery);
     res.json(teams);
   } catch (error) {
     console.error('Error fetching teams:', error);

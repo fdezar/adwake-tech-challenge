@@ -10,7 +10,12 @@ export class FootballApiService {
 
   constructor(private http: HttpClient) {}
 
-  getTeams(leagueCode: string): Observable<any> {
+  getTeams(leagueCode: string, teamName?: string): Observable<any> {
+    let params = new HttpParams();
+    if (teamName) {
+      params = params.set('teamName', teamName)
+    }
+
     return this.http.get(`${this.baseUrl}/api/leagues/teams/${leagueCode}`);
   }
 
