@@ -21,9 +21,9 @@ export class TeamListComponent implements OnInit {
 
   constructor(private apiService: FootballApiService, private route: ActivatedRoute, private router: Router) {}
 
-  viewTeam(teamId: number, teamName: string) {
+  viewTeam(teamId: number) {
     if (this.leagueCode && teamId) {
-      this.router.navigate(['/teams', this.leagueCode, teamId], { queryParams: { teamName } });
+      this.router.navigate(['/teams', this.leagueCode, teamId]);
     } else {
       console.error("League Code or Team Id is undefined: ", { leagueCode: this.leagueCode, teamId })
     }

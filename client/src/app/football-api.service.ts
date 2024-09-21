@@ -19,6 +19,7 @@ export class FootballApiService {
     if (teamId) {
       params = params.set('teamId', teamId);
     }
+    
     return this.http.get(`${this.baseUrl}/api/leagues/players/${leagueCode}`, { params });
   }
 }

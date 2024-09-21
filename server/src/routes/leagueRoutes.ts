@@ -99,10 +99,10 @@ router.get('/teams/:leagueCode', async (req: Request, res: Response) => {
   }
 });
 
-// Fetch players by league code
+// Fetch players by id
 router.get('/players/:leagueCode', async (req: Request, res: Response) => {
   const { leagueCode } = req.params;
-  const { teamName } = req.query;
+  const { teamId } = req.query;
 
   try {
     const competition = await Competition.findOne({ code: leagueCode });
@@ -110,24 +110,24 @@ router.get('/players/:leagueCode', async (req: Request, res: Response) => {
       return res.status(404).json({ error: 'League not found' });
     }
 
-    // Define the query object for teams
-    let teamsQuery: { competition: mongoose.Types.ObjectId; name?: RegExp } = {
-      competition: competition._id as mongoose.Types.ObjectId
-    };
+    // Create query for searching players
+    let playersQuery: { team?: mongoose.Types.ObjectId | { $in: mongoose.Types.ObjectId[] } } = {};
 
-    if (teamName) {
-      teamsQuery.name = new RegExp(teamName as string, 'i');
+    if (teamId) {
+      playersQuery.team = new mongoose.Types.ObjectId(teamId as string);
+    } else {
+      const teams = await Team.find({ competition: competition._id });
+      const teamIds = teams.map(team => team._id as mongoose.Types.ObjectId);
+      playersQuery.team = { $in: teamIds };
     }
 
-    const teams = await Team.find(teamsQuery);
-    const teamIds = teams.map(team => team._id);
-    const players = await Player.find({ team: { $in: teamIds } });
-
+    const players = await Player.find(playersQuery);
     res.json(players);
   } catch (error) {
     console.error('Error fetching players:', error);
     res.status(500).json({ error: 'Error fetching players' });
   }
 });
+
 
 export default router;

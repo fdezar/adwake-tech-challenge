@@ -22,8 +22,8 @@ export class TeamDetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.leagueCode = params['leagueCode'];
     });
-    this.route.queryParams.subscribe(params => {
-      this.teamId = params['id'];
+    this.route.params.subscribe(params => {
+      this.teamId = params['teamId'];
     });
 
     this.apiService.getPlayers(this.leagueCode, this.teamId).subscribe(data => {
