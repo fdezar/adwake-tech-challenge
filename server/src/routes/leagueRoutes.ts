@@ -7,11 +7,14 @@ import mongoose from 'mongoose';
 
 const router = express.Router();
 
+// Delay for controlling limit frequency
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 // Import League Data
 router.post('/import', async (req: Request, res: Response) => {
   const { leagueCode } = req.body;
-  try {
 
+  try {
     // Fetch competition data
     const competitionResponse = await axios.get(`https://api.football-data.org/v4/competitions/${leagueCode}`, {
       headers: { 'X-Auth-Token': process.env.FOOTBALL_API_KEY }
@@ -68,6 +71,9 @@ router.post('/import', async (req: Request, res: Response) => {
           });
           await player.save();
         }
+
+        // 6 second delay to respect rate limit (10 requests/min free token)
+        await delay(6000);
       } else {
         // Update competition-team relationship
         team.competition = competition._id as mongoose.Types.ObjectId;
