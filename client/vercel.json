@@ -18,6 +18,11 @@
         "src": "/(.*)",
         "dest": "/dist/client/server/main.server.mjs"
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/"
+      }
     ]
   }
-  
