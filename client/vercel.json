@@ -1,8 +1,12 @@
 {
     "builds": [
       {
-        "src": "dist/client/**",
+        "src": "dist/client/browser/**",
         "use": "@vercel/static"
+      },
+      {
+        "src": "dist/client/server/**/*.mjs",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
@@ -12,11 +16,11 @@
       },
       {
         "src": "/assets/(.*)",
-        "dest": "/dist/client/assets/$1"
+        "dest": "/dist/client/browser/assets/$1"
       },
       {
         "src": "/(.*)",
-        "dest": "/dist/client/browser/index.html"
+        "dest": "/dist/client/server/main.server.mjs"
       }
     ]
   }
