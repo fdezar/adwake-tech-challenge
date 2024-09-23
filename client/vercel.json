@@ -22,7 +22,7 @@
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "/"
+        "destination": "/dist/client/browser/index.html"
       }
     ]
   }
