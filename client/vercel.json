@@ -1,8 +1,28 @@
 {
+    "builds": [
+      {
+        "src": "dist/client/browser/**",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "dist/client/server/**/*.mjs",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/favicon.ico",
+        "dest": "/dist/client/browser/favicon.ico"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/dist/client/server/main.server.mjs"
+      }
+    ],
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "/"
+        "destination": "/dist/client/browser/index.html"
       }
     ]
   }
