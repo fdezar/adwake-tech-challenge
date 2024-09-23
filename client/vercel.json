@@ -7,9 +7,16 @@
     ],
     "routes": [
       {
+        "src": "/favicon.ico",
+        "dest": "/dist/app-name/favicon.ico"
+      },
+      {
+        "src": "/assets/(.*)",
+        "dest": "/dist/app-name/assets/$1"
+      },
+      {
         "src": "/(.*)",
         "dest": "/dist/app-name/index.html"
       }
     ]
   }
-  
