@@ -1,18 +1,23 @@
 {
     "builds": [
       {
-        "src": "/src/app/",
+        "src": "dist/client/**",
         "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/favicon.ico",
-        "dest": "/public/favicon.ico"
+        "dest": "/dist/client/favicon.ico"
+      },
+      {
+        "src": "/assets/(.*)",
+        "dest": "/dist/client/assets/$1"
       },
       {
         "src": "/(.*)",
-        "dest": "/src/index.html"
+        "dest": "/dist/client/index.html"
       }
     ]
   }
+  
