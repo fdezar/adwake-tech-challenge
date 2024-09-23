@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import indexRoutes from './src/routes/index';
 import leagueRoutes from './src/routes/leagueRoutes';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGODB_URI!, {
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
+app.use('/', indexRoutes);
 app.use('/api/leagues', leagueRoutes);
 
 // Start server
