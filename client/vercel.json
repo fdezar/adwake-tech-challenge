@@ -15,10 +15,6 @@
         "dest": "/dist/client/browser/favicon.ico"
       },
       {
-        "src": "/assets/(.*)",
-        "dest": "/dist/client/browser/assets/$1"
-      },
-      {
         "src": "/(.*)",
         "dest": "/dist/client/server/main.server.mjs"
       }
