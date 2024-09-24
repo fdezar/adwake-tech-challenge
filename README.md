@@ -55,7 +55,7 @@ Back End
 4. On the Server carpet, create a `.env` file and fill in the necessary environment variables (MONGODB_URI, FOOTBALL_API_KEY, PORT).
 5. Start the server part using `npm run dev` and the client part using `ng serve`.
 
-## Known Issues
+## Known Issues ⚠
 
 - When importing data from the Football API on the server, for some unknown reason, sometimes it imports the data correctly, sometimes it only imports one team, and other times just a few. In theory, I have the correct links to the API, which makes me wonder if the issue is with my code or with the Free version of the API, which might limit the downloads.
 
