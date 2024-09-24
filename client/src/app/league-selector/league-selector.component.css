@@ -23,6 +23,11 @@
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+#league-selector input:focus {
+    border-color: seagreen;
+    outline: none;
+}
   
 #league-selector button {
     background-color: seagreen;

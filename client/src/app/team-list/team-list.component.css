@@ -19,6 +19,11 @@
     border-radius: 5px;
 }
 
+#team-list-input:focus {
+    border-color: seagreen;
+    outline: none;
+}
+
 #teams-list {
     display: flex;
     flex-wrap: wrap;
