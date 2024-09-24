@@ -24,7 +24,7 @@ Front End
 
 - League Selector functionality
 - View league teams
-- View league players
+- View team details and players of that team
 
 Back End
 
