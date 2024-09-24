@@ -1,12 +1,13 @@
 {
+    "version": 2,
     "builds": [
-      {
-        "src": "dist/client/browser/**",
-        "use": "@vercel/static"
-      },
       {
         "src": "dist/client/server/**/*.mjs",
         "use": "@vercel/node"
+      },
+      {
+        "src": "dist/client/browser/**",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
@@ -18,11 +19,6 @@
         "src": "/(.*)",
         "dest": "/dist/client/server/main.server.mjs"
       }
-    ],
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/dist/client/browser/index.html"
-      }
     ]
   }
+  
