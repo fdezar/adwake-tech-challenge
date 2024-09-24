@@ -1,8 +1,8 @@
 <div id="league-selector">
     <h2>Select League</h2>
     <input type="text" [(ngModel)]="leagueCode" placeholder="Enter League Code" />
-    <button (click)="importLeague()">Import League Data</button>
-    <button (click)="fetchTeams()">Search</button>
+    <button (click)="importLeague()" [disabled]="isLoading || !leagueCode">Import League Data</button>
+    <button (click)="fetchTeams()" [disabled]="isLoading || !leagueCode">Search</button>
     <div *ngIf="isLoading" id="importing-data">Importing data...</div>
     <h4>Available Leagues</h4>
     <ul id="league-selector-ul">

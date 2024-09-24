@@ -37,7 +37,11 @@
   
 #league-selector button:hover {
     background-color: mediumseagreen;
-} 
+}
+
+#league-selector button:disabled {
+    background-color: #A9D5B6;
+}
 
 #importing-data {
     margin: 1rem 0 0 0;
