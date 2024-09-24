@@ -1,7 +1,26 @@
-<div>
+<div id="league-selector">
     <h2>Select League</h2>
     <input type="text" [(ngModel)]="leagueCode" placeholder="Enter League Code" />
     <button (click)="importLeague()">Import League Data</button>
     <button (click)="fetchTeams()">Search</button>
-    <div *ngIf="isLoading">Importing data...</div>
-  </div>  
+    <div *ngIf="isLoading" id="importing-data">Importing data...</div>
+    <h4>Available Leagues</h4>
+    <ul id="league-selector-ul">
+        <li>World | WC | FIFA World Cup</li>
+        <li>Europe | CL | UEFA Champions League</li>
+        <li>Germany | BL1 | Bundesliga</li>
+        <li>Netherlands | DED | Eredivisie</li>
+        <li>Brazil | BSA | Campeonato Brasileiro Série A</li>
+        <li>Spain | PD | Primera Division</li>
+        <li>France | FL1 | Ligue 1</li>
+        <li>England | ELC | Championship</li>
+        <li>Portugal | PPL | Primeira Liga</li>
+        <li>Europe | EC | European Championship</li>
+        <li>Italy | SA | Serie A</li>
+        <li>England | PL | Premier League</li>
+        <li>Brazil | CLI | Copa Libertadores</li>
+    </ul>
+    <h4>How to use</h4>
+    <p>Select your favorite League and click the "Import" button to import the data. Once is finished, click search to see teams and players of that league!</p>
+  </div>
+  
