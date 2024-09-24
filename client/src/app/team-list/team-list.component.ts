@@ -25,7 +25,7 @@ export class TeamListComponent implements OnInit {
     if (this.leagueCode && teamId) {
       this.router.navigate(['/teams', this.leagueCode, teamId]);
     } else {
-      console.error("League Code or Team Id is undefined: ", { leagueCode: this.leagueCode, teamId })
+      // console.error("League Code or Team Id is undefined: ", { leagueCode: this.leagueCode, teamId })
     }
   }
 
@@ -34,7 +34,7 @@ export class TeamListComponent implements OnInit {
       this.leagueCode = params.get('leagueCode') || '';
       if (this.leagueCode) {
         this.apiService.getTeams(this.leagueCode).subscribe(data => {
-          console.log('Teams Data:', data);
+          // console.log('Teams Data:', data);
           this.teams = data;
         });
       }

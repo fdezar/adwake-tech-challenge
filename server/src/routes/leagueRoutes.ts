@@ -83,7 +83,7 @@ router.post('/import', async (req: Request, res: Response) => {
 
     res.status(200).json({ message: 'League data imported successfully' });
   } catch (error) {
-    console.error('Error importing league data:', error);
+    // console.error('Error importing league data:', error);
     res.status(500).json({ error: 'Error importing league data' });
   }
 });
@@ -108,7 +108,7 @@ router.get('/teams/:leagueCode', async (req: Request, res: Response) => {
     const teams = await Team.find(teamsQuery);
     res.json(teams);
   } catch (error) {
-    console.error('Error fetching teams:', error);
+    // console.error('Error fetching teams:', error);
     res.status(500).json({ error: 'Error fetching teams' });
   }
 });
@@ -138,7 +138,7 @@ router.get('/players/:leagueCode', async (req: Request, res: Response) => {
     const players = await Player.find(playersQuery);
     res.json(players);
   } catch (error) {
-    console.error('Error fetching players:', error);
+    // console.error('Error fetching players:', error);
     res.status(500).json({ error: 'Error fetching players' });
   }
 });

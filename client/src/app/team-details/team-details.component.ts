@@ -28,12 +28,12 @@ export class TeamDetailsComponent implements OnInit {
 
     this.apiService.getTeams(this.leagueCode, this.teamId).subscribe(data => {
       this.team = data.find((t: any) => t._id === this.teamId);
-      console.log("Teams data: ", this.team);
+      // console.log("Teams data: ", this.team);
     });
 
     this.apiService.getPlayers(this.leagueCode, this.teamId).subscribe(data => {
       this.players = data;
-      console.log("Players data: ", this.players);
+      // console.log("Players data: ", this.players);
     });
   }
 }

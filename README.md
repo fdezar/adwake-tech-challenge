@@ -53,6 +53,18 @@ Back End
 4. On the Server carpet, create a `.env` file and fill in the necessary environment variables (MONGODB_URI, FOOTBALL_API_KEY, PORT).
 5. Start the server part using `npm run dev` and the client part using `ng serve`.
 
+## Known Issues
+
+- When importing data from the Football API on the server, for some unknown reason, sometimes it imports the data correctly, sometimes it only imports one team, and other times just a few. In theory, I have the correct links to the API, which makes me wonder if the issue is with my code or with the Free version of the API, which might limit the downloads.
+
+- There's a problem with the rigidity of the database, as some teams or players do not have all the parameters. According to the exercise instructions, all parameters were required, and I have implemented it that way. However, it’s worth mentioning that this approach causes errors in the code, as there are parameters like dateOfBirth, position, etc., or even entire teams without players, that trigger errors in the code.
+
+- Due to the previous issue, I have commented out the console.log statements instead of deleting them, in case you'd like to see the errors for yourselves.
+
+- There are some teams that have incorrect competition IDs for the leagues they belong to, for some unknown reason. For example, FC Barcelona appears in the Bundesliga because the competition association that shows up in my database is mistakenly the Bundesliga. I’m not sure if this is an error in my code or an issue with the API.
+
+- The server deployment works fine, and I have configured it successfully. However, despite my multiple attempts to configure the front-end deployment, it seems that I’m missing something, which causes it not to work. It appears that the deployment configuration for Angular is different from React, and for now, I haven't been able to find the right one. I'm unsure whether fixing this bug would take hours or days (with React, it took me days to figure it out, even with the help of a senior). In any case, I believe it goes beyond the expected time frame for completing this tech challenge.
+
 ## License 📝
 
 This project is licensed under the MIT License.

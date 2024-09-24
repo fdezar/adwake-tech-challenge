@@ -28,11 +28,11 @@ export class LeagueSelectorComponent {
     if (this.leagueCode) {
       this.apiService.importLeague(this.leagueCode).subscribe(
         response => {
-          console.log('Import successful:', response);
+          // console.log('Import successful:', response);
           this.isLoading = false;
         },
         error => {
-          console.error('Error importing league:', error);
+          // console.error('Error importing league:', error);
           this.isLoading = false;
         }
       );

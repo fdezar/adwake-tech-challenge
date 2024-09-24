@@ -12,8 +12,8 @@
     ],
     "routes": [
       {
-        "src": "/favicon.ico",
-        "dest": "/dist/client/browser/favicon.ico"
+        "src": "/football-favicon.png",
+        "dest": "/dist/client/browser/football-favicon.png"
       },
       {
         "src": "/(.*)",
