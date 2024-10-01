@@ -53,7 +53,7 @@ Back End
 2. Navigate to the project directory.
 3. Install dependencies using `npm install`.
 4. On the Server carpet, create a `.env` file and fill in the necessary environment variables (MONGODB_URI, FOOTBALL_API_KEY, PORT).
-5. Start the server part using `npm run dev` and the client part using `ng serve`.
+5. Start the server part using `npm run dev` and the client part using `npm run start`.
 
 ## Known Issues ⚠
 
