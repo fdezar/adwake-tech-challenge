@@ -23,9 +23,8 @@
             "aot": true,
             "assets": [
               {
-                "glob": "*",
-                "input": "netlify",
-                "output": "/"
+                "glob": "**/*",
+                "input": "public"
               }
             ],
             "styles": [
